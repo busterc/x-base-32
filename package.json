@@ -1,0 +1,89 @@
+{
+  "name": "x-base-32",
+  "version": "0.1.0",
+  "description":
+    "base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.",
+  "author": {
+    "name": "Buster Collings",
+    "email": "busterc@gmail.com",
+    "url": "https://about.me/buster"
+  },
+  "files": ["dist"],
+  "main": "dist/xbase32.js",
+  "keywords": [
+    "base32",
+    "unicode",
+    "utf",
+    "utf8",
+    "utf-8",
+    "utf16",
+    "utf-16",
+    "crockford",
+    "encoding",
+    "decoding",
+    "encode",
+    "decode",
+    "encoder",
+    "decoder",
+    "b32",
+    "z-base-32",
+    "zbase32",
+    "convert",
+    "urlencode",
+    "urldecode"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.3.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.1.0",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-config-xo": "^0.20.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "jest-cli": "^22.4.2",
+    "lint-staged": "^7.0.0",
+    "nsp": "^3.2.1",
+    "prettier": "^1.11.1"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest --coverage",
+    "build-es5":
+      "babel lib/xBase32.js --out-file dist/xbase32.js --presets=es2015 --plugins=transform-es2015-modules-umd",
+    "build-es5-min":
+      "babel lib/xBase32.js --out-file dist/xbase32.min.js --presets=es2015,minify --plugins=transform-es2015-modules-umd --source-maps",
+    "build": "rm -rf dist/* && npm run build-es5 && npm run build-es5-min"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
+  },
+  "eslintConfig": {
+    "extends": ["xo", "prettier"],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": ["prettier"]
+  },
+  "repository": "busterc/x-base-32",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "ISC"
+}

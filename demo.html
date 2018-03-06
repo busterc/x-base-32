@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xBase32 - DEMO - base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="dist/xbase32.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>xBase32</h1>
+    <p>base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.</p>
+    <hr>
+    <ul>
+      <li>
+        <a href="https://github.com/busterc/x-base-32">Github</a>
+      </li>
+      <li>
+        <a href="https://npmjs.com/package/x-base-32">NPM</a>
+      </li>
+    </ul>
+    <hr>
+    <p>
+      <b>Demo</b>
+    </p>
+    <div class="field">
+      <textarea id="input" class="form-control" placeholder="Content to be encoded">🦁🐯🐻 oh my!</textarea>
+    </div>
+    <button id="encode" class="btn btn-primary btn-default">&#8595; Encode &#8595;</button>
+    <hr>
+    <button id="decode" class="btn btn-primary btn-default">&#8593; Decode &#8593;</button>
+    <div class="field">
+      <textarea id="output" class="form-control" placeholder="Encoded content to be decoded"></textarea>
+    </div>
+    <hr>
+    <p>
+      powered by 🦁🐯🐻 oh my!
+    </p>
+  </div>
+  <script>
+    var btnEncode = document.getElementById("encode");
+    var btnDecode = document.getElementById("decode");
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    btnEncode.onclick = function () {
+      try {
+        output.value = xBase32.encode(input.value);
+        input.value = "";
+      } catch (error) {
+        alert(error);
+      }
+    }
+    btnDecode.onclick = function () {
+      try {
+        input.value = xBase32.decode(output.value);
+        output.value = "";
+      } catch (error) {
+        alert(error);
+      }
+    }
+  </script>
+</body>
+
+</html>
