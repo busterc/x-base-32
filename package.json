@@ -1,6 +1,6 @@
 {
   "name": "x-base-32",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description":
     "base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.",
   "author": {
