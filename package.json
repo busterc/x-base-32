@@ -85,5 +85,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "reveal": true
 }
