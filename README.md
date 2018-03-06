@@ -2,6 +2,8 @@
 
 > base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.
 
+* [Online Demo](https://rawgit.com/busterc/x-base-32/master/demo.html)
+
 ## Installation
 
 ```sh
@@ -58,7 +60,7 @@ xBase32.decode('gv0z-dv0e-r7qe-2zp1-xvgx-g3');
 ## TODO
 
 * [] Accept a `Buffer`
-* [] Provide a demo page
+* [x] Provide a [demo page](https://rawgit.com/busterc/x-base-32/master/demo.html)
 
 ## License
 
