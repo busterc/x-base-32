@@ -1,5 +1,7 @@
 # x-base-32 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/x-base-32.svg)](https://greenkeeper.io/)
+
 > base32 encoding and decoding that optimizes byte size based on input characters and supports unicode.
 
 * [Online Demo](https://rawgit.com/busterc/x-base-32/master/demo.html)
